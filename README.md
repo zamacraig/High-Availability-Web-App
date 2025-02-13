@@ -1,71 +1,102 @@
 # High Availability Web Application
 
-This project focuses on creating a High Availability Web Application using scalable and resilient architecture. The main goal is to ensure minimal downtime and maximum reliability for the web app.
-
-## Introduction
-The High Availability Web App is designed to be robust, scalable, and resilient to failures. It uses modern cloud technologies and best practices to achieve high availability and fault tolerance.
+The High Availability Web App Infrastructure project uses Terraform to automate the creation and management of AWS resources, ensuring a highly available and fault-tolerant web application deployment.
 
 ## Features
-Load Balancing
+- Automated Infrastructure Provisioning
 
-Auto-scaling
+- High Availability and Scalability
 
-Failover Mechanisms
+- Load Balancing
 
-Database Replication
+- Auto-scaling Groups
 
-Monitoring and Alerts
+- Multi-AZ Deployments
+
+- Infrastructure as Code (IaC)
 
 ## Architecture
-The architecture of this web app includes:
+The architecture includes:
 
-Load Balancer: Distributes incoming traffic across multiple instances.
+- VPC: Virtual Private Cloud to isolate the infrastructure.
 
-Web Servers: Multiple web server instances running the application.
+- Subnets: Public and private subnets across multiple availability zones.
 
-Database: Replicated database setup to ensure data availability and redundancy.
+- Load Balancer: An Elastic Load Balancer to distribute incoming traffic.
 
-Monitoring: Tools for monitoring the health and performance of the app.
+- Auto-scaling Groups: Automatically scale the number of instances based on demand.
+
+- EC2 Instances: Virtual machines running the web application.
+
+- RDS: Amazon Relational Database Service for a replicated database setup.
+
+- Security Groups: Control inbound and outbound traffic to instances.
+
+### Architectural Diagram:
+
+![High Availability Web Application drawio](https://github.com/user-attachments/assets/0184009a-9d01-4025-870d-552b50429dd7)
+
+
+## Requirements
+- Terraform v0.12 or later
+
+- AWS CLI configured with appropriate credentials
+
+- An AWS account
 
 ## Installation
-To install and set up the project locally:
+To set up the project locally:
 
-Clone the repository:
+1. Clone the repository:
 
-bash
+```bash
 git clone https://github.com/zamacraig/High-Availability-Web-App.git
 cd High-Availability-Web-App
-Install dependencies:
+```
 
-bash
-npm install
-Start the application:
+2. Initialize Terraform:
 
-bash
-npm start
-Usage
+```bash
+terraform init
+```
+
+3. Apply the Terraform configuration:
+
+```bash
+terraform apply
+```
+
+4. Confirm the apply with yes when prompted.
+
+## Usage
 After starting the application, you can access it at http://localhost:3000. Make sure to configure your load balancer and monitoring tools as per the documentation.
 
 ## Contributing
 We welcome contributions! Please follow these steps to contribute:
 
-Fork the repository.
+1. Fork the repository.
 
-Create a new branch:
+2. Create a new branch:
 
-bash
+```bash
 git checkout -b feature-name
-Make your changes.
+```
 
-Commit your changes:
+3. Make your changes.
 
-bash
+4. Commit your changes:
+
+```bash
 git commit -m "Description of changes"
-Push to the branch:
+```
 
-bash
+5. Push to the branch:
+
+```bash
 git push origin feature-name
-Open a pull request.
+```
+
+6. Open a pull request.
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
