@@ -1,4 +1,3 @@
-/*
 resource "aws_lb" "app" {
   name               = "terraform-alb"
   internal           = false
@@ -26,5 +25,3 @@ resource "aws_lb_listener" "web_listener" {
     target_group_arn = aws_lb_target_group.web_tg.arn
   }
 }
-
-*/
